@@ -1,4 +1,6 @@
-FROM gradle:jdk19 as builder
+# FROM gradle:jdk19 as builder
+FROM arm64v8/gradle:7.6-jdk19-focal as builder
+
 RUN git clone -b 4.0.0 https://github.com/hyness/spring-cloud-config-server.git /code
 WORKDIR /code
 RUN ./gradlew clean build
